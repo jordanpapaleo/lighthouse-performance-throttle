@@ -4,7 +4,7 @@
   "description": "Node app that allows for connection speed throttling in lighthouse",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx eslint ."
   },
   "author": "Jordan Papaleo",
   "license": "ISC",
@@ -12,5 +12,12 @@
     "lighthouse": "8.3.0",
     "lodash": "^4.17.21",
     "yargs": "17.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
   }
 }

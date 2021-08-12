@@ -17,7 +17,7 @@ const throttling = {
     requestLatencyMs: 150 * DEVTOOLS_RTT_ADJUSTMENT_FACTOR,
     downloadThroughputKbps: 1.6 * 1024 * DEVTOOLS_THROUGHPUT_ADJUSTMENT_FACTOR,
     uploadThroughputKbps: 750 * DEVTOOLS_THROUGHPUT_ADJUSTMENT_FACTOR,
-    cpuSlowdownMultiplier: 4,
+    cpuSlowdownMultiplier: 4
   },
   mobile4G: {
     rttMs: 170,
@@ -25,7 +25,7 @@ const throttling = {
     requestLatencyMs: 170 * DEVTOOLS_RTT_ADJUSTMENT_FACTOR,
     downloadThroughputKbps: 9 * 1024 * DEVTOOLS_THROUGHPUT_ADJUSTMENT_FACTOR,
     uploadThroughputKbps: 750 * DEVTOOLS_THROUGHPUT_ADJUSTMENT_FACTOR,
-    cpuSlowdownMultiplier: 3,
+    cpuSlowdownMultiplier: 3
   },
   mobileLTE: {
     rttMs: 70,
@@ -33,8 +33,8 @@ const throttling = {
     requestLatencyMs: 70 * DEVTOOLS_RTT_ADJUSTMENT_FACTOR,
     downloadThroughputKbps: 12 * 1024 * DEVTOOLS_THROUGHPUT_ADJUSTMENT_FACTOR,
     uploadThroughputKbps: 750 * DEVTOOLS_THROUGHPUT_ADJUSTMENT_FACTOR,
-    cpuSlowdownMultiplier: 3,
-  },
+    cpuSlowdownMultiplier: 3
+  }
 }
 
 /**
@@ -56,20 +56,20 @@ const launchChromeAndRunLighthouse = (url, speed = '3g') => {
     default:
       throttleSpeed = throttling.mobile3G
       break
-}
+  }
 
   return chromeLauncher.launch({ chromeFlags: ['--headless'] })
     .then((chrome) => lighthouse(url, {
-        throttling: throttleSpeed,
-        logLevel: 'info',
-        output: 'json',
-        onlyCategories: ['performance'],
-        port: chrome.port,
-        quiet: true,
-      })
-        .then((results) => chrome.kill()
-          .then(() => results)
-        )
+      throttling: throttleSpeed,
+      logLevel: 'info',
+      output: 'json',
+      onlyCategories: ['performance'],
+      port: chrome.port,
+      quiet: true
+    })
+      .then((results) => chrome.kill()
+        .then(() => results)
+      )
     )
 }
 
@@ -86,5 +86,5 @@ if (argv.url) {
     })
     .catch((err) => { console.log(err) })
 } else {
-  throw '--url param is required'
+  throw new Error('--url param is required')
 }
