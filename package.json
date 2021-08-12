@@ -1,0 +1,16 @@
+{
+  "name": "lighthouse-performance-throttle",
+  "version": "1.0.0",
+  "description": "Node app that allows for connection speed throttling in lighthouse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordan Papaleo",
+  "license": "ISC",
+  "dependencies": {
+    "lighthouse": "8.3.0",
+    "lodash": "^4.17.21",
+    "yargs": "17.1.0"
+  }
+}
