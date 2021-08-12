@@ -15,7 +15,7 @@ This tool is execuded via the command line.
 
 Cli flags:
 - `--url`: required | the url to test
-- `--speed`: optional | '3g' '4g' 'lte' | defaults to 3g like the lighthouse service
+- `--speed`: optional | 3g 4g lte | defaults to 3g like the lighthouse service
 
 Run the following command from the root of your project in your terminal.
 
