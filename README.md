@@ -20,7 +20,7 @@ Cli flags:
 Run the following command from the root of your project in your terminal.
 
 ```bash
-node index.js --url https://theorem.co --speed lte
+node index.js --url https://mysite.com --speed lte
 ```
 
 ## Links
